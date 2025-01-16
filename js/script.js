@@ -1,22 +1,22 @@
-document.querySelector('form').addEventListener('submit', async (e) => {
+// Submit form
+document.querySelector('form').addEventListener("submit", async (e) => {
     e.preventDefault();
-    const id = document.querySelector('#userId').value;
-    const title = document.querySelector('#title').value;
-    const content = document.querySelector('#content').value;
+    const content = document.querySelector("#content").value;
+    const id = document.querySelector("#userId").value;
 
     const body = {
-        id: Number(id),
-        title: title,
-        content: content
+        content: content,
+        id: id,
     };
 
-    const res = await fetch('http://localhost:3010/post', {
-        method: 'POST',
+    const res = await fetch ("http://localhost:3010/test", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',
+            "Content-type": "application/json",
         },
         body: JSON.stringify(body),
-    });
+    })
     const data = await res.json();
     console.log(data);
 });
+
