@@ -1,4 +1,3 @@
-// Submit form
 document.querySelector('form').addEventListener("submit", async (e) => {
     e.preventDefault();
     const content = document.querySelector("#content").value;
